@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700&display=swap');
 
-:root{
+:root {
     /* Palette */
     --primary-solid: #FF3333;
-    --primary-900: rgb(255, 51, 51,0.9);
-    --primary-500: rgb(255, 51, 51,0.5);
-    --primary-300: rgb(255, 51, 51,0.3);
+    --primary-900: rgb(255, 51, 51, 0.9);
+    --primary-500: rgb(255, 51, 51, 0.5);
+    --primary-300: rgb(255, 51, 51, 0.3);
 
     --secondary-solid: #1D84B5;
     --secondary-900: rgb(29, 132, 181, 0.9);
-    --secondary-500: rgb(29 ,132 ,181, 0.5);
+    --secondary-500: rgb(29, 132, 181, 0.5);
     --secondary-300: rgb(29, 132, 181, 0.3);
 
     --dark-solid: #1F1F1F;
@@ -17,13 +17,13 @@
     --dark-500: rgb(31, 31, 31, 0.5);
     --dark-300: rgb(31, 31, 31, 0.3);
 
-    --dark-bg-solid:#30343F;
-    --light-bg-solid:#FAFAFF;
-    --light-font-solid:#FFFFFF;
+    --dark-bg-solid: #30343F;
+    --light-bg-solid: #FAFAFF;
+    --light-font-solid: #FFFFFF;
 
     /* Typography */
-    --base-font:'Inter',sans-serif;
-    --alternative-font:'Raleway',sans-serif;
+    --base-font: 'Inter', sans-serif;
+    --alternative-font: 'Raleway', sans-serif;
 
     /* Font-sizes */
     --font-display: 4.6em;
@@ -49,15 +49,15 @@
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html {
     font-family: var(--base-font);
     font-size: 62.5%;
-    color: var(--dark-solid); 
+    color: var(--dark-solid);
 }
 
 a {
@@ -66,11 +66,14 @@ a {
     color: inherit;
 }
 
-header,footer {
+header,
+footer {
     font-family: var(--alternative-font);
     color: var(--light-font-solid);
 }
-ul, ol {
+
+ul,
+ol {
     list-style-type: none;
 }
 
@@ -97,7 +100,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .navbar__logo {
@@ -152,7 +154,7 @@ header {
 
 /* BANNER (HERO) */
 
-.hero{
+.hero {
     background-image: url(../img/funkos-banner.webp);
     padding: var(--spacing-128);
     background-position: top;
@@ -161,7 +163,7 @@ header {
     position: relative;
 }
 
-.hero::before{
+.hero::before {
     content: '';
     background-color: rgba(0, 0, 0, 0);
     width: 100%;
@@ -181,19 +183,19 @@ header {
     position: relative;
 }
 
-.hero__title{
+.hero__title {
     font-family: var(--alternative-font);
     font-size: var(--font-jumbo);
     color: var(--light-font-solid);
 }
 
-.hero__text{
+.hero__text {
     font-family: var(--alternative-font);
     font-size: var(--font-medium);
     color: var(--light-font-solid);
 }
 
-.hero__link{
+.hero__link {
     display: inline-block;
     font-size: var(--font-medium);
     background-color: var(--light-bg-solid);
@@ -203,7 +205,55 @@ header {
     transition: all .3s ease-in-out;
 }
 
-.hero__link:hover{
+.hero__link:hover {
     background-color: var(--primary-900);
     color: var(--light-font-solid);
+}
+
+/* COLLECTIONS */
+
+.collection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+}
+
+.collection:nth-child(2) .collection__cover {
+    order: -1;
+}
+
+.collection__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-24);
+    align-items: start
+}
+
+.collection__title {
+    font-family: var(--alternative-font);
+    font-size: var(--font-display);
+    font-weight: 500;
+}
+
+.collection__text {
+    font-family: var(--alternative-font);
+    font-size: var(--font-large);
+    font-weight: 300;
+    border-bottom: 2px solid var(--primary-solid);
+    padding-bottom: var(--spacing-20);
+}
+
+.collection__link {
+    display: inline-block;
+    font-size: var(--font-medium);
+    background-color: var(--dark-bg-solid);
+    color: var(--light-bg-solid);
+    padding: var(--spacing-16) var(--spacing-36);
+    border-radius: 50px;
+    font-weight: 500;
+    transition: background .3s ease-in-out;
+}
+
+.collection__link:hover{
+    background-color: var(--primary-900);
 }
